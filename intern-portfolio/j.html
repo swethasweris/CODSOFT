@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color:white;
+        }
+
+        header {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 1000; 
+}
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #efdede;
+        }
+
+        .hero {
+            background-image: url('your-image-path.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 150px 20px;
+            color:#333;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 4em;
+            font-weight: 900;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        .section {
+            padding: 70px 100px;
+            text-align: center;
+            background-image: linear-gradient(black, rgb(84, 79, 79));
+        }
+
+        .section h2 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: #b8afaf;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .columns {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .column {
+            flex: 1;
+            margin: 15px;
+            padding: 30px;
+            background-color: #f9f9f9;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            transition: transform 0.3s ease;
+        }
+
+        .column:hover {
+            transform: translateY(-10px);
+        }
+
+        .column img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+            margin-right: 50px;
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            flex: 2;
+            text-align: left;
+        }
+
+        .about-text p {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #ede2e2;
+        }
+
+        .skill-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 1000px;
+        
+    }
+
+    .skill-item {
+        display: block;
+        align-items: center;
+        margin-bottom: 15px;
+
+    }
+
+    .skill-info {
+        display: flex;
+        align-items: center;
+        width: 700px;
+    }
+
+    .skill-bar {
+        height: 10px;
+        background-color: #f9fbfc;
+        border-radius: 5px;
+        width:100px;
+        margin: 0 10px;
+        display:flex;
+        
+    }
+
+    .skill-bar1{
+        height:10px;
+        border-radius:5px;
+        width:100px;
+        margin:-10px  10px;
+       display: flex;
+    }
+    
+
+    .skill-percent {
+        margin-left: 10px;
+        font-weight: bold;
+    }
+
+    
+    .skill-name{
+        display: block;
+        float:left;
+        position:absolute;
+        left:50%;
+        display: flex;
+
+    }
+
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 500px;
+            margin-top: 30px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 1.1em;
+        }
+
+        .contact-form button {
+            padding: 15px 30px;
+            border: none;
+            background-color:gray;
+            color: #fff;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #000000;
+        }
+
+        footer {
+            background-color: hsl(0, 0%, 0%);
+            text-align: center;
+            padding: 20px 0;
+            color: #fff;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .footer-icons a {
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .footer-icons a:hover {
+            color: #ff6b6b;
+        }
+
+        #home{
+            background-image:url("gray-gradient.webp");
+            background-size: cover;
+            text-align: left;
+            color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#footer">social_links</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div>
+        <h1>Swetha P.</h1>
+        <p>Innovating through technology, one project at a time.</p>
+        <p><b>An enthusiastic intern at codsoft pursuing as a web developer</b> </p>
+        <p>Bachelor of Technology (B.Tech) in Information Technology<br>
+            Kongu Engineering College, Erode, Tamil Nadu<br>
+            Expected Graduation:<b>2026</b></p>
+        <img src="360.jpg" style="position: absolute; top:20%; right:20%; border-radius: 100%;"/>
+        <br><br><br><br><br><br><br><br>
+    </div>
+</section>
+<section id="skills" class="section">
+    <h2 style="color:#ccc">My Skills</h2>
+    <div class="skill-container">
+        <img src="3569271_0760_2.jpg" style="position: absolute; right:10%; border-radius: 70%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" height="400" width="400"/>
+        <div class="skill-item">
+            <span class="skill-name">HTML</span><br>
+            <div class="skill-bar-container">
+                <div class="skill-bar1" style="width: 600px; background-color: #756f6f;"></div>
+                <div class="skill-bar" style="width: 300px;"></div><br>
+                <span class="skill-percent">55%</span><br>
+                
+            </div>
+            
+        </div>
+
+        <div class="skill-item">
+            <span class="skill-name">CSS</span><br>
+            <div class="skill-bar-container">
+                <div class="skill-bar1" style="width: 600px; background-color: #756f6f;"></div>
+                <div class="skill-bar" style="width: 80%;"></div><br>
+                <span class="skill-percent">80%</span><br>
+                
+            </div>
+            
+        </div>
+
+        <div class="skill-item">
+            <span class="skill-name">JavaScript</span><br>
+            <div class="skill-bar-container">
+                <div class="skill-bar1" style="width: 600px; background-color: #756f6f;"></div>
+                <div class="skill-bar" style="width: 75%;"></div><br>
+                <span class="skill-percent">75%</span><br>
+                
+            </div>
+            
+        </div>
+
+        <div class="skill-item">
+            <span class="skill-name">Java</span><br>
+            <div class="skill-bar-container">
+                <div class="skill-bar1" style="width: 600px; background-color: #756f6f;"></div>
+                <div class="skill-bar" style="width: 70%;"></div><br>
+                <span class="skill-percent">70%</span><br>
+            </div>
+            
+        </div>
+
+        <div class="skill-item">
+            <span class="skill-name">SQL</span><br>
+            <div class="skill-bar-container">
+                <div class="skill-bar1" style="width: 600px; background-color: #756f6f;"></div>
+                <div class="skill-bar" style="width: 65%;"></div><br>
+                <span class="skill-percent">65%</span><br>
+            </div>
+            
+        </div>
+    </div><br><br><br><br>
+</section>
+
+
+<section id="projects" class="section">
+    <h2>My Projects</h2>
+    <p>Here are some of the projects I've worked on:</p>
+    <div class="columns">
+        <div class="column">
+            <img src="images.jpg" alt="Project 1" height="300">
+            <h3>Portfolio Website</h3>
+            <p>A responsive personal portfolio website showcasing my skills and projects.</p>
+        </div>
+        <div class="column">
+            <img src="images (1).jpeg" alt="Project 2" height="300">
+            <h3>Lab Mark Management System</h3>
+            <p>A web application to manage and track lab marks for students efficiently.</p>
+        </div>
+    </div><br><br><br><br><br><br><br><br><br><br>
+</section>
+
+<section id="about" class="section">
+    <h2>About Me</h2>
+    <div class="about-content">
+        <img src="illus.avif" alt="About Me" class="about-image" height="400" width="400">
+        <div class="about-text">
+            <p>Hello! I'm Swetha P., a passionate developer with a B.Tech in Information Technology. My journey in technology started with a curiosity about how things work, and it has since evolved into a deep passion for creating innovative solutions that make a difference.</p>
+            <p>With experience in both frontend and backend development, I thrive in environments where I can apply my knowledge to solve complex problems and contribute to the growth of the team. I'm always eager to learn new technologies and push the boundaries of what I can do.</p>
+        </div>
+    </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <div class="contact-content">
+        <p>If you'd like to discuss a project or just want to say hi, feel free to reach out through any of the channels below. I'm always open to new opportunities and collaborations!</p>
+        
+        <div class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button><br><br>
+        </div><br><br><br><br><br>
+
+        
+        </div>
+    </div>
+</section>
+<secton id="footer">
+<footer>
+    <p>&copy; 2024 Swetha P. All Rights Reserved.</p>
+    <div class="footer-icons">
+        <p>You can also find me on social media:</p>
+        
+        <a href="https://www.instagram.com" target="_blank"><img src="insta.jpeg" height="30" width="30"/></a>
+       
+            <a href="https://github.com/swethasweris/codsoft" target="_blank"><img src="unnamed.webp" height="30" width="30"/></a>
+            <a href="mailto:swethap.22it@kongu.edu"><img src="download (1).jpeg" height="30" width="30"/></a>
+            <a href="tel:+918903688838"><img src="phone-icon-telephone-icon-symbol-for-app-and-messenger-vector.jpg" height="30" width="30"/></a>
+    </div>
+</footer>
+</secton>
+</body>
+</html>
+
