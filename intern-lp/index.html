@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image:url("images.jpeg");
+            background-size:cover;
+            color:whitesmoke;
+        }
+
+        header {
+            background-color: #1428a0;
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .search-bar {
+            position: absolute;
+            right: 150px;
+            top: 25px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .search-bar input {
+            padding: 5px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            width: 200px;
+        }
+
+        .order-now {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            
+            background-color: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            
+        }
+
+        .hero {
+            background-image: url('FzIlJCMWwAQsnko-scaled.webp');
+            background-size: cover;
+            background-position: center;
+            text-align: left;
+            padding: 100px 20px;
+            color: white;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+        }
+
+        .section {
+            padding: 50px 100px;
+            text-align: center;
+        }
+
+        .section h2 {
+            margin-bottom: 10px;
+            font-size: 2em;
+            color: #145fa0;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .columns {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .column {
+            flex: 1;
+            margin: 15px;
+            padding: 20px;
+            background-color: white;
+            color: black;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+        }
+
+        .column img {
+            max-width: 100%;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .about-image {
+            flex: 1;
+            margin-right: 50px;
+            max-width: 100%;
+            border-radius: 15px;
+           
+        }
+
+        .about-text {
+            flex: 2;
+            text-align: left;
+        }
+
+        .about-text p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 400px;
+            margin-top: 30px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #1428a0;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        footer {
+            background-color: #1428a0;
+            text-align: center;
+            padding: 10px 0;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .order-form {
+            display: none;
+            padding: 50px 100px;
+            text-align: center;
+        }
+
+        .order-form h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #1428a0;
+        }
+
+        .order-form form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .order-form input, .order-form select {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .order-form button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #1428a0;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        <a href="#order" class="order-now">Order Now</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div>
+        <h1>new gateway for</h1>
+        <p>Innovating a better future</p>
+        <h1 style="text-align:right">SAMSUNG</h1>
+    </div>
+</section>
+
+<section id="products" class="section">
+    <h2>Our Products</h2>
+    <p>Explore our latest range of smartphones, TVs, home appliances, and more.</p>
+    <div class="columns">
+        <div class="column">
+            <img src="wm.jpg" alt="Product 1" height="300">
+            <h3>WASHER AND DRYER</h3>
+            <p>Samsung washers and Samsung dryers are a popular choice for many homeowners, and for good reason.</p>
+        </div>
+        <div class="column">
+            <img src="p.jpg" alt="Product 2" height="300">
+            <h3>MOBILE PHONES</h3>
+            <p>Samsung continues pushing the limits of battery life in its mobile devices.</p>
+        </div>
+        <div class="column">
+            <img src="maxresdefault.jpg" alt="Product 3" height="300">
+            <h3>AIR CONDITIONER</h3>
+            <p>Discover air conditioners at Samsung. Our air conditioners have been designed from the ground up to be outstandingly efficient.</p>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <h2>About Samsung</h2>
+    <div class="about-content">
+        <img src="samsung-india-gst-investigation.jpg"   height="300";
+        width="300" alt="Samsung Office" class="about-image">
+        <div class="about-text">
+            <p>Samsung, a South Korean company, is one of the world's largest producers of electronic devices. Samsung specializes in the production of a wide variety of consumer and industry electronics, including appliances, digital media devices, semiconductors, memory chips, and integrated systems.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <div class="contact-content">
+        <p>Get in touch with us for any queries or support. We are here to help you.</p>
+        <div class="contact-form">
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea rows="5" placeholder="Your Message"></textarea>
+            <button>Send Message</button>
+        </div>
+    </div>
+</section>
+
+<section id="order" class="order-form">
+    <h2>Place Your Order</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <select required>
+            <option value="" disabled selected>Select Product</option>
+            <option value="washer-dryer">Washer and Dryer</option>
+            <option value="mobile-phone">Mobile Phone</option>
+            <option value="air-conditioner">Air Conditioner</option>
+        </select>
+        <button type="submit">Order Now</button>
+    </form>
+</section>
+
+
+<footer>
+    <p>&copy; 2024 Samsung. All rights reserved.</p>
+</footer>
+
+<script>
+    document.querySelector('.order-now').addEventListener('click', function() {
+        document.querySelector('.order-form').style.display = 'block';
+        document.querySelector('.order-form').scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
+
+</body>
+</html>
